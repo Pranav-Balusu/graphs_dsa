@@ -11,7 +11,7 @@ public class MultiSourceBFS{
   
   while (!queue.isEmpty()) {
       int size = queue.size();
-  
+      boolean changed=false;//for tracking the min time/ distance
       for (int i = 0; i < size; i++) {
           int[] cell = queue.poll();
           int row = cell[0], col = cell[1];
@@ -24,9 +24,10 @@ public class MultiSourceBFS{
                   visited[newRow][newCol] = true;
                   grid[newRow][newCol] = updatedValue; // transformation
                   queue.offer(new int[]{newRow, newCol});
+                  changed=true;
               }
           }
       }
-      steps++; // optional — for tracking time or distance
+      if(changed)steps++; // optional — for tracking time or distance
   }
 }
