@@ -1,5 +1,8 @@
 //Used for longest strictly increasing paths, game routing, or constrained directional steps on 2D grids
-
+//Grid Movement with Monotonic Conditions: "Move up, down, left, right to an adjacent cell with a strictly larger / strictly smaller value."
+//Fixed Directional Flow: "You can only move right and down" or "move to the next row with column offset
+//Bounded Steps / Fuel / Resource: "Move at most $K$ steps on the matrix" — the state decreases strictly ($k \to k-1$), which eliminates cycles.
+//Finding Longest / Shortest / Count of Paths on a Matrix: Problems asking for optimal length, maximum points collected, or number of increasing sequences starting from any arbitrary cell.
 public class Grid_DFS_DP_Template {
     private static final int[][] DIRS = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     private int rows, cols;
