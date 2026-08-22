@@ -1,4 +1,7 @@
 //Used for evaluating subtree properties across all possible choices of tree roots in $O(N)$ time.
+//When solving a tree problem where an answer is required for every single node as if it were
+//the root, the brute-force approach runs a full DFS/BFS for each node ($N$ runs $\implies O(N^2)$ time).
+
 import java.util.*;
 
 public class Tree_Rerooting_DP_Template {
